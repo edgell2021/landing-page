@@ -11,3 +11,12 @@ for (let section of sections) {
 }
 
 navCont.appendChild(fragment);
+
+//click even on nav elements to scroll to section using  scrollIntoView() method
+
+navCont.addEventListener("click", function(event) {
+  const sectionTarget = event.target.textContent.toLowerCase();
+  createID = "#" + sectionTarget.replace(/\s+/g, "");
+  scrollTo = document.querySelector(createID);
+  scrollTo.scrollIntoView({ behavior: "smooth", block: "end" });
+});
