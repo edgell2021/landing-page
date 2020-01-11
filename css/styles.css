@@ -204,7 +204,8 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+section.activeSection {
+  border: 1px solid #fff;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     0deg,
@@ -213,12 +214,12 @@ section.your-active-class {
   );
 }
 
-section.your-active-class .landing__container::before {
+section.activeSection .landing__container::before {
   opacity: 1;
   animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+section.activeSection .landing__container::after {
   opacity: 1;
   animation: rotate 5s linear 0s infinite forwards reverse;
 }
@@ -231,4 +232,21 @@ section.your-active-class .landing__container::after {
   to {
     transform: rotate(360deg) translate(-1em) rotate(-360deg);
   }
+}
+
+/* Return to top button */
+.return-button {
+  display: block;
+  width: 110px;
+  margin: 40px auto;
+  padding: 20px 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-decoration: none;
+}
+
+.return-button:hover {
+  color: #000;
+  border: 1px solid #000;
+  background-color: #fff;
 }

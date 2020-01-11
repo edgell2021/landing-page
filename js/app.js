@@ -15,7 +15,7 @@ navCont.appendChild(fragment);
 //remove active class form all elements
 function removeActiveClass() {
   for (let section of sections) {
-    section.classList.remove("your-active-class");
+    section.classList.remove("activeSection");
   }
 }
 
@@ -27,5 +27,13 @@ navCont.addEventListener("click", function(event) {
   scrollTo = document.querySelector(createID);
   window.scroll(0, scrollTo.offsetTop - navCont.offsetHeight);
   removeActiveClass();
-  scrollTo.classList.add("your-active-class");
+  scrollTo.classList.add("activeSection");
+});
+
+//scroll to top of pagge with return button
+const returnBtn = document.querySelector(".return-button");
+
+returnBtn.addEventListener("click", function() {
+  const pageTop = document.getElementById("main-heading");
+  window.scroll(0, pageTop.offsetTop - navCont.offsetHeight);
 });
