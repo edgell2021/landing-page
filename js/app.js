@@ -2,6 +2,7 @@
 const fragment = document.createDocumentFragment(),
   pageTop = document.getElementById("main-heading"),
   navCont = document.getElementById("navbar__list"),
+  navLinks = document.getElementsByClassName("menu__link"),
   sections = document.getElementsByTagName("section");
 
 for (let section of sections) {
@@ -18,6 +19,9 @@ function removeActiveClass() {
   for (let section of sections) {
     section.classList.remove("activeSection");
   }
+  for (let navLink of navLinks) {
+    navLink.classList.remove("activeNavLink");
+  }
 }
 
 //click even on nav elements to scroll to section using  scrollIntoView() method
@@ -28,6 +32,7 @@ navCont.addEventListener("click", function(event) {
   scrollTo = document.querySelector(createID);
   window.scroll(0, scrollTo.offsetTop - navCont.offsetHeight);
   removeActiveClass();
+  event.target.classList.add("activeNavLink");
   scrollTo.classList.add("activeSection");
 });
 
